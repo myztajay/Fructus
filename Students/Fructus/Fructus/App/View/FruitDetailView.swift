@@ -13,8 +13,8 @@ struct FruitDetailView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView(.vertical, showsIndicators: true) {
-                VStack(alignment: .center, spacing: 20) {
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(alignment: .center) {
                     //MARK: - HEADER
                     FruitHeaderView(fruit: fruit)
                     VStack(alignment: .leading, spacing: 20) {
@@ -52,7 +52,8 @@ struct FruitDetailView: View {
 struct FruitDetailView_Previews: PreviewProvider {
     static var previews: some View {
         FruitDetailView(fruit: fruitsData[0])
-            .preferredColorScheme(.dark)
+            .previewDevice("iPhone SE (3rd generation)")
+            .preferredColorScheme(.light)
             .previewLayout(.sizeThatFits)
             .ignoresSafeArea()
     }
